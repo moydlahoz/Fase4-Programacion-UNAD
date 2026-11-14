@@ -67,3 +67,39 @@ Noviembre de 2026
 ### Repositorio
 
 [Fase4-Programacion-UNAD](https://github.com/moydlahoz/Fase4-Programacion-UNAD)
+
+### Validación realizada y lista de comprobación
+
+Notebook validado con `nbformat` y ejecutado íntegramente con `nbclient` en dos kernels nuevos: **37/37 operaciones correctas en ambas ejecuciones**, sin salidas de error inesperado. Se conservan los resultados en las celdas. La última prueba crea y confirma una reserva después de las pruebas negativas. El log evidencia ambas ejecuciones y las trazas de las excepciones esperadas.
+
+- [x] Clase abstracta general: `Entidad`, sección 4; prueba 34.
+- [x] Cliente: sección 5; pruebas 1, 2, 14, 28, 29 y 30.
+- [x] Encapsulación: propiedades de Cliente y estado de Reserva; pruebas 14, 27 y 28.
+- [x] Clase abstracta Servicio: sección 6; prueba 35.
+- [x] ReservaSala: sección 7; prueba 3.
+- [x] AlquilerEquipo: sección 8; prueba 5.
+- [x] AsesoriaEspecializada: sección 9; prueba 6.
+- [x] Herencia: entidades derivadas de Entidad y servicios concretos derivados de Servicio.
+- [x] Polimorfismo: sección 12 y prueba 18.
+- [x] Métodos sobrescritos: costo, descripción y validación en cada servicio.
+- [x] Sobrecarga simulada: sección 13 y prueba 19.
+- [x] Clase Reserva: sección 10; pruebas 7 a 13, 16, 17 y 26.
+- [x] Listas internas: sección 11; prueba 18 y comprobación final.
+- [x] Validaciones: texto, correo, teléfono, tarifa, duración, porcentajes, tipos y finitud.
+- [x] Excepciones personalizadas: seis clases en sección 3, todas utilizadas directamente o como base de captura.
+- [x] try/except: sección 14.
+- [x] try/except/else: sección 15; se comprueba la rama else.
+- [x] try/except/finally: sección 16; se comprueba finally con éxito y error.
+- [x] Encadenamiento de excepciones: sección 17 y prueba 15, con causa comprobada.
+- [x] Sistema de logs: sección 2, niveles INFO/WARNING/ERROR y trazas.
+- [x] Archivo sistema.log: generado por el notebook y verificado en sección 19.
+- [x] Mínimo 10 operaciones: 37 pruebas numeradas en sección 18.
+- [x] Casos válidos: costos, actualización de datos y transiciones permitidas.
+- [x] Casos inválidos: errores específicos esperados y comprobados.
+- [x] Continuidad después de errores: prueba 37 y resumen de sección 19.
+- [x] Sin base de datos: objetos y listas en memoria; solo logs en archivo.
+- [x] Código documentado: Markdown, docstrings y comentarios de decisiones relevantes.
+- [x] Notebook ejecutable: 38 celdas, 18 de código, ejecución completa validada.
+- [x] README: descripción, conceptos, servicios, instrucciones y comprobaciones.
+- [x] .gitignore: exclusiones de Python/Jupyter; conserva sistema.log.
+- [x] Proyecto publicado en GitHub: enlace real anterior, rama main, commits separados sin alterar fechas ni usar force push.

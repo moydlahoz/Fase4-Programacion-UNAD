@@ -1,0 +1,1016 @@
+2026-11-14 15:14:30,567 | INFO | Inicio del programa Software FJ
+2026-11-14 15:14:30,616 | INFO | Cliente creado: DEMO-1
+2026-11-14 15:14:30,618 | INFO | Servicio creado: sala S-1
+2026-11-14 15:14:30,618 | INFO | Servicio creado: equipo E-1
+2026-11-14 15:14:30,618 | INFO | Servicio creado: asesoría A-1
+2026-11-14 15:14:30,618 | INFO | Reserva realizada: R-DEMO; servicio S-1
+2026-11-14 15:14:30,631 | WARNING | ClienteInvalidoError: El correo no tiene un formato básico válido.
+2026-11-14 15:14:30,631 | ERROR | Error controlado al actualizar correo: El correo no tiene un formato básico válido.
+2026-11-14 15:14:30,636 | INFO | Reserva procesada: R-DEMO
+2026-11-14 15:14:30,642 | INFO | Reserva realizada: R-FINALLY; servicio S-1
+2026-11-14 15:14:30,642 | INFO | FINALLY: intento de reserva finalizado
+2026-11-14 15:14:30,642 | WARNING | ReservaInvalidaError: Duración de reserva debe ser mayor que 0.
+2026-11-14 15:14:30,642 | ERROR | Error controlado en demostración finally: Duración de reserva debe ser mayor que 0.
+2026-11-14 15:14:30,642 | INFO | FINALLY: intento de reserva finalizado
+2026-11-14 15:14:30,647 | WARNING | Conversión inválida en Duración de reserva
+2026-11-14 15:14:30,647 | ERROR | Excepción encadenada controlada en demostración
+Traceback (most recent call last):
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_17404\2854059921.py", line 33, in numero_valido
+    numero = float(valor)
+             ^^^^^^^^^^^^
+ValueError: could not convert string to float: 'dos horas'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_17404\2975959730.py", line 3, in <module>
+    Reserva("R-CAUSA", clientes[0], servicios[0], "dos horas")
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_17404\1529948991.py", line 9, in __init__
+    tiempo = numero_valido(duracion, "Duración de reserva", ReservaInvalidaError)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_17404\2854059921.py", line 37, in numero_valido
+    raise tipo_error(f"{campo} debe ser numérico.") from error_original
+ReservaInvalidaError: Duración de reserva debe ser numérico.
+2026-11-14 15:14:30,670 | INFO | Cliente creado: 1001
+2026-11-14 15:14:30,670 | INFO | Prueba 1 finalizada; aprobada=True
+2026-11-14 15:14:30,670 | WARNING | ClienteInvalidoError: Nombre debe ser un texto no vacío.
+2026-11-14 15:14:30,670 | ERROR | Prueba 2: excepción esperada controlada
+Traceback (most recent call last):
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_17404\3852702461.py", line 9, in ejecutar_prueba
+    operacion()
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_17404\3852702461.py", line 128, in <lambda>
+    ("Cliente con nombre vacío", lambda: Cliente("2", " ", "a@example.com", "3001234567"), ClienteInvalidoError),
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_17404\4284315449.py", line 5, in __init__
+    self.nombre = nombre
+    ^^^^^^^^^^^
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_17404\4284315449.py", line 16, in nombre
+    self.__nombre = texto_valido(valor, "Nombre", ClienteInvalidoError)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_17404\2854059921.py", line 25, in texto_valido
+    rechazar(tipo_error, f"{campo} debe ser un texto no vacío.")
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_17404\2854059921.py", line 21, in rechazar
+    raise tipo_error(mensaje)
+ClienteInvalidoError: Nombre debe ser un texto no vacío.
+2026-11-14 15:14:30,670 | INFO | Prueba 2 finalizada; aprobada=True
+2026-11-14 15:14:30,670 | INFO | Servicio creado: sala S-T
+2026-11-14 15:14:30,670 | INFO | Prueba 3 finalizada; aprobada=True
+2026-11-14 15:14:30,670 | WARNING | ServicioInvalidoError: Precio debe ser mayor que 0.
+2026-11-14 15:14:30,670 | ERROR | Prueba 4: excepción esperada controlada
+Traceback (most recent call last):
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_17404\3852702461.py", line 9, in ejecutar_prueba
+    operacion()
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_17404\3852702461.py", line 130, in <lambda>
+    ("Servicio con precio negativo", lambda: ReservaSala("S-X", -1, 2), ServicioInvalidoError),
+                                             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_17404\2684401165.py", line 3, in __init__
+    super().__init__(identificacion, precio, disponible)
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_17404\3940910715.py", line 5, in __init__
+    self.__precio = numero_valido(precio, "Precio", ServicioInvalidoError)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_17404\2854059921.py", line 42, in numero_valido
+    rechazar(tipo_error, f"{campo} debe ser {relacion} {minimo}.")
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_17404\2854059921.py", line 21, in rechazar
+    raise tipo_error(mensaje)
+ServicioInvalidoError: Precio debe ser mayor que 0.
+2026-11-14 15:14:30,672 | INFO | Prueba 4 finalizada; aprobada=True
+2026-11-14 15:14:30,672 | INFO | Servicio creado: equipo E-T
+2026-11-14 15:14:30,672 | INFO | Prueba 5 finalizada; aprobada=True
+2026-11-14 15:14:30,672 | INFO | Servicio creado: asesoría A-T
+2026-11-14 15:14:30,672 | INFO | Prueba 6 finalizada; aprobada=True
+2026-11-14 15:14:30,672 | INFO | Reserva realizada: R-T; servicio S-T
+2026-11-14 15:14:30,672 | INFO | Prueba 7 finalizada; aprobada=True
+2026-11-14 15:14:30,672 | WARNING | ReservaInvalidaError: Duración de reserva debe ser mayor que 0.
+2026-11-14 15:14:30,672 | ERROR | Prueba 8: excepción esperada controlada
+Traceback (most recent call last):
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_17404\3852702461.py", line 9, in ejecutar_prueba
+    operacion()
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_17404\3852702461.py", line 134, in <lambda>
+    ("Reserva con duración negativa", lambda: Reserva("R-X", clientes_prueba[0], servicios_prueba[0], -2), ReservaInvalidaError),
+                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_17404\1529948991.py", line 9, in __init__
+    tiempo = numero_valido(duracion, "Duración de reserva", ReservaInvalidaError)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_17404\2854059921.py", line 42, in numero_valido
+    rechazar(tipo_error, f"{campo} debe ser {relacion} {minimo}.")
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_17404\2854059921.py", line 21, in rechazar
+    raise tipo_error(mensaje)
+ReservaInvalidaError: Duración de reserva debe ser mayor que 0.
+2026-11-14 15:14:30,672 | INFO | Prueba 8 finalizada; aprobada=True
+2026-11-14 15:14:30,672 | INFO | Reserva procesada: R-T
+2026-11-14 15:14:30,672 | INFO | Reserva confirmada: R-T
+2026-11-14 15:14:30,672 | INFO | Prueba 9 finalizada; aprobada=True
+2026-11-14 15:14:30,672 | INFO | Reserva cancelada: R-T
+2026-11-14 15:14:30,672 | INFO | Prueba 10 finalizada; aprobada=True
+2026-11-14 15:14:30,672 | WARNING | OperacionNoPermitidaError: No se puede cancelar una reserva en estado cancelada.
+2026-11-14 15:14:30,672 | ERROR | Prueba 11: excepción esperada controlada
+Traceback (most recent call last):
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_17404\3852702461.py", line 9, in ejecutar_prueba
+    operacion()
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_17404\3852702461.py", line 137, in <lambda>
+    ("Cancelar dos veces", lambda: reservas_prueba[0].cancelar(), OperacionNoPermitidaError),
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_17404\1529948991.py", line 57, in cancelar
+    self.__exigir_estado(("pendiente", "procesada", "confirmada"), "cancelar")
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_17404\1529948991.py", line 41, in __exigir_estado
+    rechazar(OperacionNoPermitidaError,
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_17404\2854059921.py", line 21, in rechazar
+    raise tipo_error(mensaje)
+OperacionNoPermitidaError: No se puede cancelar una reserva en estado cancelada.
+2026-11-14 15:14:30,672 | INFO | Prueba 11 finalizada; aprobada=True
+2026-11-14 15:14:30,672 | INFO | Servicio creado: equipo E-NO
+2026-11-14 15:14:30,672 | WARNING | ServicioNoDisponibleError: Servicio E-NO no disponible.
+2026-11-14 15:14:30,672 | ERROR | Prueba 12: excepción esperada controlada
+Traceback (most recent call last):
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_17404\3852702461.py", line 9, in ejecutar_prueba
+    operacion()
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_17404\3852702461.py", line 64, in servicio_no_disponible
+    Reserva("R-NO", clientes_prueba[0], servicio, 1)
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_17404\1529948991.py", line 11, in __init__
+    tiempo = servicio.validar_parametros(tiempo)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_17404\1650672438.py", line 13, in validar_parametros
+    self.comprobar_disponibilidad()
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_17404\3940910715.py", line 24, in comprobar_disponibilidad
+    rechazar(ServicioNoDisponibleError, f"Servicio {self.identificacion} no disponible.")
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_17404\2854059921.py", line 21, in rechazar
+    raise tipo_error(mensaje)
+ServicioNoDisponibleError: Servicio E-NO no disponible.
+2026-11-14 15:14:30,672 | INFO | Prueba 12 finalizada; aprobada=True
+2026-11-14 15:14:30,672 | WARNING | OperacionNoPermitidaError: No se puede confirmar una reserva en estado cancelada.
+2026-11-14 15:14:30,673 | ERROR | Prueba 13: excepción esperada controlada
+Traceback (most recent call last):
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_17404\3852702461.py", line 9, in ejecutar_prueba
+    operacion()
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_17404\3852702461.py", line 139, in <lambda>
+    ("Confirmar una reserva cancelada", lambda: reservas_prueba[0].confirmar(), OperacionNoPermitidaError),
+                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_17404\1529948991.py", line 51, in confirmar
+    self.__exigir_estado(("procesada",), "confirmar")
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_17404\1529948991.py", line 41, in __exigir_estado
+    rechazar(OperacionNoPermitidaError,
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_17404\2854059921.py", line 21, in rechazar
+    raise tipo_error(mensaje)
+OperacionNoPermitidaError: No se puede confirmar una reserva en estado cancelada.
+2026-11-14 15:14:30,673 | INFO | Prueba 13 finalizada; aprobada=True
+2026-11-14 15:14:30,673 | WARNING | ClienteInvalidoError: El correo no tiene un formato básico válido.
+2026-11-14 15:14:30,673 | ERROR | Prueba 14: excepción esperada controlada
+Traceback (most recent call last):
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_17404\3852702461.py", line 9, in ejecutar_prueba
+    operacion()
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_17404\3852702461.py", line 70, in actualizacion_invalida
+    cliente.correo = "sin-arroba"
+    ^^^^^^^^^^^^^^
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_17404\4284315449.py", line 26, in correo
+    rechazar(ClienteInvalidoError, "El correo no tiene un formato básico válido.")
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_17404\2854059921.py", line 21, in rechazar
+    raise tipo_error(mensaje)
+ClienteInvalidoError: El correo no tiene un formato básico válido.
+2026-11-14 15:14:30,673 | INFO | Prueba 14 finalizada; aprobada=True
+2026-11-14 15:14:30,673 | WARNING | Conversión inválida en Duración de reserva
+2026-11-14 15:14:30,673 | ERROR | Prueba 15: excepción esperada controlada
+Traceback (most recent call last):
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_17404\2854059921.py", line 33, in numero_valido
+    numero = float(valor)
+             ^^^^^^^^^^^^
+ValueError: could not convert string to float: 'abc'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_17404\3852702461.py", line 9, in ejecutar_prueba
+    operacion()
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_17404\3852702461.py", line 76, in comprobar_causa
+    Reserva("R-TEXTO", clientes_prueba[0], servicios_prueba[0], "abc")
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_17404\1529948991.py", line 9, in __init__
+    tiempo = numero_valido(duracion, "Duración de reserva", ReservaInvalidaError)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_17404\2854059921.py", line 37, in numero_valido
+    raise tipo_error(f"{campo} debe ser numérico.") from error_original
+ReservaInvalidaError: Duración de reserva debe ser numérico.
+2026-11-14 15:14:30,673 | INFO | Prueba 15 finalizada; aprobada=True
+2026-11-14 15:14:30,673 | WARNING | ServicioInvalidoError: Días de alquiler debe ser entero.
+2026-11-14 15:14:30,673 | WARNING | Parámetros incompatibles con la reserva
+2026-11-14 15:14:30,673 | ERROR | Prueba 16: excepción esperada controlada
+Traceback (most recent call last):
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_17404\1529948991.py", line 11, in __init__
+    tiempo = servicio.validar_parametros(tiempo)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_17404\1650672438.py", line 14, in validar_parametros
+    return entero_positivo(duracion, "Días de alquiler", ServicioInvalidoError)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_17404\2854059921.py", line 48, in entero_positivo
+    rechazar(tipo_error, f"{campo} debe ser entero.")
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_17404\2854059921.py", line 21, in rechazar
+    raise tipo_error(mensaje)
+ServicioInvalidoError: Días de alquiler debe ser entero.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_17404\3852702461.py", line 9, in ejecutar_prueba
+    operacion()
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_17404\3852702461.py", line 142, in <lambda>
+    ("Alquiler con fracción de día", lambda: Reserva("R-FRAC", clientes_prueba[0], servicios_prueba[1], 1.5), ReservaInvalidaError),
+                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_17404\1529948991.py", line 15, in __init__
+    raise ReservaInvalidaError("La duración no cumple las reglas del servicio.") from error_original
+ReservaInvalidaError: La duración no cumple las reglas del servicio.
+2026-11-14 15:14:30,673 | INFO | Prueba 16 finalizada; aprobada=True
+2026-11-14 15:14:30,673 | WARNING | ServicioInvalidoError: Horas de asesoría debe ser mayor o igual que 1.
+2026-11-14 15:14:30,673 | WARNING | Parámetros incompatibles con la reserva
+2026-11-14 15:14:30,673 | ERROR | Prueba 17: excepción esperada controlada
+Traceback (most recent call last):
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_17404\1529948991.py", line 11, in __init__
+    tiempo = servicio.validar_parametros(tiempo)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_17404\2037930848.py", line 13, in validar_parametros
+    return numero_valido(duracion, "Horas de asesoría", ServicioInvalidoError,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_17404\2854059921.py", line 42, in numero_valido
+    rechazar(tipo_error, f"{campo} debe ser {relacion} {minimo}.")
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_17404\2854059921.py", line 21, in rechazar
+    raise tipo_error(mensaje)
+ServicioInvalidoError: Horas de asesoría debe ser mayor o igual que 1.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_17404\3852702461.py", line 9, in ejecutar_prueba
+    operacion()
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_17404\3852702461.py", line 143, in <lambda>
+    ("Asesoría menor de una hora", lambda: Reserva("R-CORTA", clientes_prueba[0], servicios_prueba[2], 0.5), ReservaInvalidaError),
+                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_17404\1529948991.py", line 15, in __init__
+    raise ReservaInvalidaError("La duración no cumple las reglas del servicio.") from error_original
+ReservaInvalidaError: La duración no cumple las reglas del servicio.
+2026-11-14 15:14:30,673 | INFO | Prueba 17 finalizada; aprobada=True
+2026-11-14 15:14:30,673 | INFO | Prueba 18 finalizada; aprobada=True
+2026-11-14 15:14:30,673 | INFO | Prueba 19 finalizada; aprobada=True
+2026-11-14 15:14:30,675 | WARNING | ServicioInvalidoError: Los porcentajes no pueden superar 100.
+2026-11-14 15:14:30,675 | ERROR | Prueba 20: excepción esperada controlada
+Traceback (most recent call last):
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_17404\3852702461.py", line 9, in ejecutar_prueba
+    operacion()
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_17404\3852702461.py", line 146, in <lambda>
+    ("Porcentaje fuera de rango", lambda: servicios_prueba[0].calcular_costo(101), ServicioInvalidoError),
+                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_17404\2684401165.py", line 18, in calcular_costo
+    return self.ajustar_costo(self.precio * horas, descuento, impuesto)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_17404\3940910715.py", line 32, in ajustar_costo
+    rechazar(ServicioInvalidoError, "Los porcentajes no pueden superar 100.")
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_17404\2854059921.py", line 21, in rechazar
+    raise tipo_error(mensaje)
+ServicioInvalidoError: Los porcentajes no pueden superar 100.
+2026-11-14 15:14:30,675 | INFO | Prueba 20 finalizada; aprobada=True
+2026-11-14 15:14:30,675 | WARNING | ServicioInvalidoError: Precio debe ser finito.
+2026-11-14 15:14:30,675 | ERROR | Prueba 21: excepción esperada controlada
+Traceback (most recent call last):
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_17404\3852702461.py", line 9, in ejecutar_prueba
+    operacion()
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_17404\3852702461.py", line 147, in <lambda>
+    ("Precio infinito", lambda: ReservaSala("S-INF", float("inf"), 2), ServicioInvalidoError),
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_17404\2684401165.py", line 3, in __init__
+    super().__init__(identificacion, precio, disponible)
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_17404\3940910715.py", line 5, in __init__
+    self.__precio = numero_valido(precio, "Precio", ServicioInvalidoError)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_17404\2854059921.py", line 39, in numero_valido
+    rechazar(tipo_error, f"{campo} debe ser finito.")
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_17404\2854059921.py", line 21, in rechazar
+    raise tipo_error(mensaje)
+ServicioInvalidoError: Precio debe ser finito.
+2026-11-14 15:14:30,675 | INFO | Prueba 21 finalizada; aprobada=True
+2026-11-14 15:14:30,675 | WARNING | ReservaInvalidaError: Duración de reserva debe ser finito.
+2026-11-14 15:14:30,675 | ERROR | Prueba 22: excepción esperada controlada
+Traceback (most recent call last):
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_17404\3852702461.py", line 9, in ejecutar_prueba
+    operacion()
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_17404\3852702461.py", line 148, in <lambda>
+    ("Duración NaN", lambda: Reserva("R-NAN", clientes_prueba[0], servicios_prueba[0], float("nan")), ReservaInvalidaError),
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_17404\1529948991.py", line 9, in __init__
+    tiempo = numero_valido(duracion, "Duración de reserva", ReservaInvalidaError)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_17404\2854059921.py", line 39, in numero_valido
+    rechazar(tipo_error, f"{campo} debe ser finito.")
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_17404\2854059921.py", line 21, in rechazar
+    raise tipo_error(mensaje)
+ReservaInvalidaError: Duración de reserva debe ser finito.
+2026-11-14 15:14:30,675 | INFO | Prueba 22 finalizada; aprobada=True
+2026-11-14 15:14:30,675 | WARNING | Conversión inválida en Duración de reserva
+2026-11-14 15:14:30,675 | ERROR | Prueba 23: excepción esperada controlada
+Traceback (most recent call last):
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_17404\2854059921.py", line 32, in numero_valido
+    raise ValueError("Tipo numérico no admitido")
+ValueError: Tipo numérico no admitido
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_17404\3852702461.py", line 9, in ejecutar_prueba
+    operacion()
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_17404\3852702461.py", line 149, in <lambda>
+    ("Booleano como duración", lambda: Reserva("R-BOOL", clientes_prueba[0], servicios_prueba[0], True), ReservaInvalidaError),
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_17404\1529948991.py", line 9, in __init__
+    tiempo = numero_valido(duracion, "Duración de reserva", ReservaInvalidaError)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_17404\2854059921.py", line 37, in numero_valido
+    raise tipo_error(f"{campo} debe ser numérico.") from error_original
+ReservaInvalidaError: Duración de reserva debe ser numérico.
+2026-11-14 15:14:30,675 | INFO | Prueba 23 finalizada; aprobada=True
+2026-11-14 15:14:30,675 | WARNING | ReservaInvalidaError: La reserva requiere un objeto Cliente.
+2026-11-14 15:14:30,675 | ERROR | Prueba 24: excepción esperada controlada
+Traceback (most recent call last):
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_17404\3852702461.py", line 9, in ejecutar_prueba
+    operacion()
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_17404\3852702461.py", line 150, in <lambda>
+    ("Cliente de tipo incorrecto", lambda: Reserva("R-CLI", "Laura", servicios_prueba[0], 1), ReservaInvalidaError),
+                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_17404\1529948991.py", line 6, in __init__
+    rechazar(ReservaInvalidaError, "La reserva requiere un objeto Cliente.")
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_17404\2854059921.py", line 21, in rechazar
+    raise tipo_error(mensaje)
+ReservaInvalidaError: La reserva requiere un objeto Cliente.
+2026-11-14 15:14:30,675 | INFO | Prueba 24 finalizada; aprobada=True
+2026-11-14 15:14:30,675 | WARNING | ReservaInvalidaError: La reserva requiere un objeto Servicio.
+2026-11-14 15:14:30,675 | ERROR | Prueba 25: excepción esperada controlada
+Traceback (most recent call last):
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_17404\3852702461.py", line 9, in ejecutar_prueba
+    operacion()
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_17404\3852702461.py", line 151, in <lambda>
+    ("Servicio de tipo incorrecto", lambda: Reserva("R-SRV", clientes_prueba[0], "sala", 1), ReservaInvalidaError),
+                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_17404\1529948991.py", line 8, in __init__
+    rechazar(ReservaInvalidaError, "La reserva requiere un objeto Servicio.")
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_17404\2854059921.py", line 21, in rechazar
+    raise tipo_error(mensaje)
+ReservaInvalidaError: La reserva requiere un objeto Servicio.
+2026-11-14 15:14:30,675 | INFO | Prueba 25 finalizada; aprobada=True
+2026-11-14 15:14:30,675 | INFO | Servicio creado: sala S-DISP
+2026-11-14 15:14:30,675 | INFO | Reserva realizada: R-DISP; servicio S-DISP
+2026-11-14 15:14:30,675 | INFO | Reserva procesada: R-DISP
+2026-11-14 15:14:30,675 | WARNING | ServicioNoDisponibleError: Servicio S-DISP no disponible.
+2026-11-14 15:14:30,675 | ERROR | Prueba 26: excepción esperada controlada
+Traceback (most recent call last):
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_17404\3852702461.py", line 9, in ejecutar_prueba
+    operacion()
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_17404\3852702461.py", line 99, in disponibilidad_al_confirmar
+    reserva.confirmar()
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_17404\1529948991.py", line 52, in confirmar
+    self.servicio.comprobar_disponibilidad()
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_17404\3940910715.py", line 24, in comprobar_disponibilidad
+    rechazar(ServicioNoDisponibleError, f"Servicio {self.identificacion} no disponible.")
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_17404\2854059921.py", line 21, in rechazar
+    raise tipo_error(mensaje)
+ServicioNoDisponibleError: Servicio S-DISP no disponible.
+2026-11-14 15:14:30,677 | INFO | Prueba 26 finalizada; aprobada=True
+2026-11-14 15:14:30,677 | ERROR | Prueba 27: excepción esperada controlada
+Traceback (most recent call last):
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_17404\3852702461.py", line 9, in ejecutar_prueba
+    operacion()
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_17404\3852702461.py", line 104, in estado_solo_lectura
+    reservas_prueba[0].estado = "confirmada"
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: property 'estado' of 'Reserva' object has no setter
+2026-11-14 15:14:30,677 | INFO | Prueba 27 finalizada; aprobada=True
+2026-11-14 15:14:30,677 | INFO | Prueba 28 finalizada; aprobada=True
+2026-11-14 15:14:30,677 | WARNING | ClienteInvalidoError: El teléfono debe tener de 7 a 15 dígitos, con + opcional.
+2026-11-14 15:14:30,677 | ERROR | Prueba 29: excepción esperada controlada
+Traceback (most recent call last):
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_17404\3852702461.py", line 9, in ejecutar_prueba
+    operacion()
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_17404\3852702461.py", line 155, in <lambda>
+    ("Teléfono inválido", lambda: Cliente("3", "Luis", "luis@example.com", "abc"), ClienteInvalidoError),
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_17404\4284315449.py", line 7, in __init__
+    self.telefono = telefono
+    ^^^^^^^^^^^^^
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_17404\4284315449.py", line 37, in telefono
+    rechazar(ClienteInvalidoError, "El teléfono debe tener de 7 a 15 dígitos, con + opcional.")
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_17404\2854059921.py", line 21, in rechazar
+    raise tipo_error(mensaje)
+ClienteInvalidoError: El teléfono debe tener de 7 a 15 dígitos, con + opcional.
+2026-11-14 15:14:30,677 | INFO | Prueba 29 finalizada; aprobada=True
+2026-11-14 15:14:30,677 | WARNING | ClienteInvalidoError: Identificación debe ser un texto no vacío.
+2026-11-14 15:14:30,677 | ERROR | Prueba 30: excepción esperada controlada
+Traceback (most recent call last):
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_17404\3852702461.py", line 9, in ejecutar_prueba
+    operacion()
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_17404\3852702461.py", line 156, in <lambda>
+    ("Identificación vacía", lambda: Cliente("", "Luis", "luis@example.com", "3001234567"), ClienteInvalidoError),
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_17404\4284315449.py", line 4, in __init__
+    super().__init__(texto_valido(identificacion, "Identificación", ClienteInvalidoError))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_17404\2854059921.py", line 25, in texto_valido
+    rechazar(tipo_error, f"{campo} debe ser un texto no vacío.")
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_17404\2854059921.py", line 21, in rechazar
+    raise tipo_error(mensaje)
+ClienteInvalidoError: Identificación debe ser un texto no vacío.
+2026-11-14 15:14:30,677 | INFO | Prueba 30 finalizada; aprobada=True
+2026-11-14 15:14:30,677 | WARNING | ServicioInvalidoError: Capacidad debe ser entero.
+2026-11-14 15:14:30,677 | ERROR | Prueba 31: excepción esperada controlada
+Traceback (most recent call last):
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_17404\3852702461.py", line 9, in ejecutar_prueba
+    operacion()
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_17404\3852702461.py", line 157, in <lambda>
+    ("Capacidad no entera", lambda: ReservaSala("S-CAP", 50000, 2.5), ServicioInvalidoError),
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_17404\2684401165.py", line 4, in __init__
+    self.__capacidad = entero_positivo(capacidad, "Capacidad", ServicioInvalidoError)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_17404\2854059921.py", line 48, in entero_positivo
+    rechazar(tipo_error, f"{campo} debe ser entero.")
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_17404\2854059921.py", line 21, in rechazar
+    raise tipo_error(mensaje)
+ServicioInvalidoError: Capacidad debe ser entero.
+2026-11-14 15:14:30,677 | INFO | Prueba 31 finalizada; aprobada=True
+2026-11-14 15:14:30,677 | WARNING | ServicioInvalidoError: Cantidad de equipos debe ser mayor que 0.
+2026-11-14 15:14:30,677 | ERROR | Prueba 32: excepción esperada controlada
+Traceback (most recent call last):
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_17404\3852702461.py", line 9, in ejecutar_prueba
+    operacion()
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_17404\3852702461.py", line 158, in <lambda>
+    ("Cantidad de equipos cero", lambda: AlquilerEquipo("E-CERO", 30000, 0), ServicioInvalidoError),
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_17404\1650672438.py", line 4, in __init__
+    self.__cantidad = entero_positivo(cantidad, "Cantidad de equipos", ServicioInvalidoError)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_17404\2854059921.py", line 46, in entero_positivo
+    numero = numero_valido(valor, campo, tipo_error)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_17404\2854059921.py", line 42, in numero_valido
+    rechazar(tipo_error, f"{campo} debe ser {relacion} {minimo}.")
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_17404\2854059921.py", line 21, in rechazar
+    raise tipo_error(mensaje)
+ServicioInvalidoError: Cantidad de equipos debe ser mayor que 0.
+2026-11-14 15:14:30,677 | INFO | Prueba 32 finalizada; aprobada=True
+2026-11-14 15:14:30,677 | WARNING | ServicioInvalidoError: Especialidad debe ser un texto no vacío.
+2026-11-14 15:14:30,677 | ERROR | Prueba 33: excepción esperada controlada
+Traceback (most recent call last):
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_17404\3852702461.py", line 9, in ejecutar_prueba
+    operacion()
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_17404\3852702461.py", line 159, in <lambda>
+    ("Especialidad vacía", lambda: AsesoriaEspecializada("A-VAC", 80000, ""), ServicioInvalidoError),
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_17404\2037930848.py", line 4, in __init__
+    self.__especialidad = texto_valido(especialidad, "Especialidad", ServicioInvalidoError)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_17404\2854059921.py", line 25, in texto_valido
+    rechazar(tipo_error, f"{campo} debe ser un texto no vacío.")
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_17404\2854059921.py", line 21, in rechazar
+    raise tipo_error(mensaje)
+ServicioInvalidoError: Especialidad debe ser un texto no vacío.
+2026-11-14 15:14:30,677 | INFO | Prueba 33 finalizada; aprobada=True
+2026-11-14 15:14:30,677 | ERROR | Prueba 34: excepción esperada controlada
+Traceback (most recent call last):
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_17404\3852702461.py", line 9, in ejecutar_prueba
+    operacion()
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_17404\3852702461.py", line 160, in <lambda>
+    ("Entidad abstracta", lambda: Entidad("X"), TypeError),
+                                  ^^^^^^^^^^^^
+TypeError: Can't instantiate abstract class Entidad without an implementation for abstract method 'describir'
+2026-11-14 15:14:30,677 | INFO | Prueba 34 finalizada; aprobada=True
+2026-11-14 15:14:30,677 | ERROR | Prueba 35: excepción esperada controlada
+Traceback (most recent call last):
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_17404\3852702461.py", line 9, in ejecutar_prueba
+    operacion()
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_17404\3852702461.py", line 161, in <lambda>
+    ("Servicio abstracto", lambda: Servicio("X", 1000), TypeError),
+                                   ^^^^^^^^^^^^^^^^^^^
+TypeError: Can't instantiate abstract class Servicio without an implementation for abstract methods 'calcular_costo', 'describir_servicio', 'validar_parametros'
+2026-11-14 15:14:30,678 | INFO | Prueba 35 finalizada; aprobada=True
+2026-11-14 15:14:30,678 | INFO | Reserva realizada: R-PEND; servicio S-T
+2026-11-14 15:14:30,678 | WARNING | OperacionNoPermitidaError: No se puede confirmar una reserva en estado pendiente.
+2026-11-14 15:14:30,678 | ERROR | Prueba 36: excepción esperada controlada
+Traceback (most recent call last):
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_17404\3852702461.py", line 9, in ejecutar_prueba
+    operacion()
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_17404\3852702461.py", line 162, in <lambda>
+    ("Confirmar antes de procesar", lambda: Reserva("R-PEND", clientes_prueba[0], servicios_prueba[0], 1).confirmar(), OperacionNoPermitidaError),
+                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_17404\1529948991.py", line 51, in confirmar
+    self.__exigir_estado(("procesada",), "confirmar")
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_17404\1529948991.py", line 41, in __exigir_estado
+    rechazar(OperacionNoPermitidaError,
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_17404\2854059921.py", line 21, in rechazar
+    raise tipo_error(mensaje)
+OperacionNoPermitidaError: No se puede confirmar una reserva en estado pendiente.
+2026-11-14 15:14:30,678 | INFO | Prueba 36 finalizada; aprobada=True
+2026-11-14 15:14:30,678 | INFO | Reserva realizada: R-CONTINUA; servicio A-T
+2026-11-14 15:14:30,678 | INFO | Reserva procesada: R-CONTINUA
+2026-11-14 15:14:30,678 | INFO | Reserva confirmada: R-CONTINUA
+2026-11-14 15:14:30,678 | INFO | Prueba 37 finalizada; aprobada=True
+2026-11-14 15:14:30,683 | INFO | Pruebas finalizadas: 37/37 correctas
+2026-11-14 15:16:10,593 | INFO | Inicio del programa Software FJ
+2026-11-14 15:16:10,641 | INFO | Cliente creado: DEMO-1
+2026-11-14 15:16:10,641 | INFO | Servicio creado: sala S-1
+2026-11-14 15:16:10,641 | INFO | Servicio creado: equipo E-1
+2026-11-14 15:16:10,641 | INFO | Servicio creado: asesoría A-1
+2026-11-14 15:16:10,643 | INFO | Reserva realizada: R-DEMO; servicio S-1
+2026-11-14 15:16:10,655 | WARNING | ClienteInvalidoError: El correo no tiene un formato básico válido.
+2026-11-14 15:16:10,657 | ERROR | Error controlado al actualizar correo: El correo no tiene un formato básico válido.
+2026-11-14 15:16:10,660 | INFO | Reserva procesada: R-DEMO
+2026-11-14 15:16:10,666 | INFO | Reserva realizada: R-FINALLY; servicio S-1
+2026-11-14 15:16:10,666 | INFO | FINALLY: intento de reserva finalizado
+2026-11-14 15:16:10,666 | WARNING | ReservaInvalidaError: Duración de reserva debe ser mayor que 0.
+2026-11-14 15:16:10,666 | ERROR | Error controlado en demostración finally: Duración de reserva debe ser mayor que 0.
+2026-11-14 15:16:10,666 | INFO | FINALLY: intento de reserva finalizado
+2026-11-14 15:16:10,670 | WARNING | Conversión inválida en Duración de reserva
+2026-11-14 15:16:10,670 | ERROR | Excepción encadenada controlada en demostración
+Traceback (most recent call last):
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_25472\2854059921.py", line 33, in numero_valido
+    numero = float(valor)
+             ^^^^^^^^^^^^
+ValueError: could not convert string to float: 'dos horas'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_25472\2975959730.py", line 3, in <module>
+    Reserva("R-CAUSA", clientes[0], servicios[0], "dos horas")
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_25472\1529948991.py", line 9, in __init__
+    tiempo = numero_valido(duracion, "Duración de reserva", ReservaInvalidaError)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_25472\2854059921.py", line 37, in numero_valido
+    raise tipo_error(f"{campo} debe ser numérico.") from error_original
+ReservaInvalidaError: Duración de reserva debe ser numérico.
+2026-11-14 15:16:10,693 | INFO | Cliente creado: 1001
+2026-11-14 15:16:10,694 | INFO | Prueba 1 finalizada; aprobada=True
+2026-11-14 15:16:10,694 | WARNING | ClienteInvalidoError: Nombre debe ser un texto no vacío.
+2026-11-14 15:16:10,694 | ERROR | Prueba 2: excepción esperada controlada
+Traceback (most recent call last):
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_25472\3852702461.py", line 9, in ejecutar_prueba
+    operacion()
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_25472\3852702461.py", line 128, in <lambda>
+    ("Cliente con nombre vacío", lambda: Cliente("2", " ", "a@example.com", "3001234567"), ClienteInvalidoError),
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_25472\4284315449.py", line 5, in __init__
+    self.nombre = nombre
+    ^^^^^^^^^^^
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_25472\4284315449.py", line 16, in nombre
+    self.__nombre = texto_valido(valor, "Nombre", ClienteInvalidoError)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_25472\2854059921.py", line 25, in texto_valido
+    rechazar(tipo_error, f"{campo} debe ser un texto no vacío.")
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_25472\2854059921.py", line 21, in rechazar
+    raise tipo_error(mensaje)
+ClienteInvalidoError: Nombre debe ser un texto no vacío.
+2026-11-14 15:16:10,694 | INFO | Prueba 2 finalizada; aprobada=True
+2026-11-14 15:16:10,694 | INFO | Servicio creado: sala S-T
+2026-11-14 15:16:10,694 | INFO | Prueba 3 finalizada; aprobada=True
+2026-11-14 15:16:10,694 | WARNING | ServicioInvalidoError: Precio debe ser mayor que 0.
+2026-11-14 15:16:10,694 | ERROR | Prueba 4: excepción esperada controlada
+Traceback (most recent call last):
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_25472\3852702461.py", line 9, in ejecutar_prueba
+    operacion()
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_25472\3852702461.py", line 130, in <lambda>
+    ("Servicio con precio negativo", lambda: ReservaSala("S-X", -1, 2), ServicioInvalidoError),
+                                             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_25472\622223553.py", line 3, in __init__
+    super().__init__(identificacion, precio, disponible)
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_25472\3940910715.py", line 5, in __init__
+    self.__precio = numero_valido(precio, "Precio", ServicioInvalidoError)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_25472\2854059921.py", line 42, in numero_valido
+    rechazar(tipo_error, f"{campo} debe ser {relacion} {minimo}.")
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_25472\2854059921.py", line 21, in rechazar
+    raise tipo_error(mensaje)
+ServicioInvalidoError: Precio debe ser mayor que 0.
+2026-11-14 15:16:10,694 | INFO | Prueba 4 finalizada; aprobada=True
+2026-11-14 15:16:10,694 | INFO | Servicio creado: equipo E-T
+2026-11-14 15:16:10,694 | INFO | Prueba 5 finalizada; aprobada=True
+2026-11-14 15:16:10,694 | INFO | Servicio creado: asesoría A-T
+2026-11-14 15:16:10,694 | INFO | Prueba 6 finalizada; aprobada=True
+2026-11-14 15:16:10,694 | INFO | Reserva realizada: R-T; servicio S-T
+2026-11-14 15:16:10,694 | INFO | Prueba 7 finalizada; aprobada=True
+2026-11-14 15:16:10,694 | WARNING | ReservaInvalidaError: Duración de reserva debe ser mayor que 0.
+2026-11-14 15:16:10,694 | ERROR | Prueba 8: excepción esperada controlada
+Traceback (most recent call last):
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_25472\3852702461.py", line 9, in ejecutar_prueba
+    operacion()
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_25472\3852702461.py", line 134, in <lambda>
+    ("Reserva con duración negativa", lambda: Reserva("R-X", clientes_prueba[0], servicios_prueba[0], -2), ReservaInvalidaError),
+                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_25472\1529948991.py", line 9, in __init__
+    tiempo = numero_valido(duracion, "Duración de reserva", ReservaInvalidaError)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_25472\2854059921.py", line 42, in numero_valido
+    rechazar(tipo_error, f"{campo} debe ser {relacion} {minimo}.")
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_25472\2854059921.py", line 21, in rechazar
+    raise tipo_error(mensaje)
+ReservaInvalidaError: Duración de reserva debe ser mayor que 0.
+2026-11-14 15:16:10,694 | INFO | Prueba 8 finalizada; aprobada=True
+2026-11-14 15:16:10,694 | INFO | Reserva procesada: R-T
+2026-11-14 15:16:10,694 | INFO | Reserva confirmada: R-T
+2026-11-14 15:16:10,694 | INFO | Prueba 9 finalizada; aprobada=True
+2026-11-14 15:16:10,694 | INFO | Reserva cancelada: R-T
+2026-11-14 15:16:10,694 | INFO | Prueba 10 finalizada; aprobada=True
+2026-11-14 15:16:10,694 | WARNING | OperacionNoPermitidaError: No se puede cancelar una reserva en estado cancelada.
+2026-11-14 15:16:10,694 | ERROR | Prueba 11: excepción esperada controlada
+Traceback (most recent call last):
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_25472\3852702461.py", line 9, in ejecutar_prueba
+    operacion()
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_25472\3852702461.py", line 137, in <lambda>
+    ("Cancelar dos veces", lambda: reservas_prueba[0].cancelar(), OperacionNoPermitidaError),
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_25472\1529948991.py", line 57, in cancelar
+    self.__exigir_estado(("pendiente", "procesada", "confirmada"), "cancelar")
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_25472\1529948991.py", line 41, in __exigir_estado
+    rechazar(OperacionNoPermitidaError,
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_25472\2854059921.py", line 21, in rechazar
+    raise tipo_error(mensaje)
+OperacionNoPermitidaError: No se puede cancelar una reserva en estado cancelada.
+2026-11-14 15:16:10,696 | INFO | Prueba 11 finalizada; aprobada=True
+2026-11-14 15:16:10,696 | INFO | Servicio creado: equipo E-NO
+2026-11-14 15:16:10,696 | WARNING | ServicioNoDisponibleError: Servicio E-NO no disponible.
+2026-11-14 15:16:10,696 | ERROR | Prueba 12: excepción esperada controlada
+Traceback (most recent call last):
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_25472\3852702461.py", line 9, in ejecutar_prueba
+    operacion()
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_25472\3852702461.py", line 64, in servicio_no_disponible
+    Reserva("R-NO", clientes_prueba[0], servicio, 1)
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_25472\1529948991.py", line 11, in __init__
+    tiempo = servicio.validar_parametros(tiempo)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_25472\1650672438.py", line 13, in validar_parametros
+    self.comprobar_disponibilidad()
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_25472\3940910715.py", line 24, in comprobar_disponibilidad
+    rechazar(ServicioNoDisponibleError, f"Servicio {self.identificacion} no disponible.")
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_25472\2854059921.py", line 21, in rechazar
+    raise tipo_error(mensaje)
+ServicioNoDisponibleError: Servicio E-NO no disponible.
+2026-11-14 15:16:10,696 | INFO | Prueba 12 finalizada; aprobada=True
+2026-11-14 15:16:10,696 | WARNING | OperacionNoPermitidaError: No se puede confirmar una reserva en estado cancelada.
+2026-11-14 15:16:10,696 | ERROR | Prueba 13: excepción esperada controlada
+Traceback (most recent call last):
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_25472\3852702461.py", line 9, in ejecutar_prueba
+    operacion()
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_25472\3852702461.py", line 139, in <lambda>
+    ("Confirmar una reserva cancelada", lambda: reservas_prueba[0].confirmar(), OperacionNoPermitidaError),
+                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_25472\1529948991.py", line 51, in confirmar
+    self.__exigir_estado(("procesada",), "confirmar")
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_25472\1529948991.py", line 41, in __exigir_estado
+    rechazar(OperacionNoPermitidaError,
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_25472\2854059921.py", line 21, in rechazar
+    raise tipo_error(mensaje)
+OperacionNoPermitidaError: No se puede confirmar una reserva en estado cancelada.
+2026-11-14 15:16:10,696 | INFO | Prueba 13 finalizada; aprobada=True
+2026-11-14 15:16:10,696 | WARNING | ClienteInvalidoError: El correo no tiene un formato básico válido.
+2026-11-14 15:16:10,696 | ERROR | Prueba 14: excepción esperada controlada
+Traceback (most recent call last):
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_25472\3852702461.py", line 9, in ejecutar_prueba
+    operacion()
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_25472\3852702461.py", line 70, in actualizacion_invalida
+    cliente.correo = "sin-arroba"
+    ^^^^^^^^^^^^^^
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_25472\4284315449.py", line 26, in correo
+    rechazar(ClienteInvalidoError, "El correo no tiene un formato básico válido.")
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_25472\2854059921.py", line 21, in rechazar
+    raise tipo_error(mensaje)
+ClienteInvalidoError: El correo no tiene un formato básico válido.
+2026-11-14 15:16:10,696 | INFO | Prueba 14 finalizada; aprobada=True
+2026-11-14 15:16:10,696 | WARNING | Conversión inválida en Duración de reserva
+2026-11-14 15:16:10,696 | ERROR | Prueba 15: excepción esperada controlada
+Traceback (most recent call last):
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_25472\2854059921.py", line 33, in numero_valido
+    numero = float(valor)
+             ^^^^^^^^^^^^
+ValueError: could not convert string to float: 'abc'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_25472\3852702461.py", line 9, in ejecutar_prueba
+    operacion()
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_25472\3852702461.py", line 76, in comprobar_causa
+    Reserva("R-TEXTO", clientes_prueba[0], servicios_prueba[0], "abc")
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_25472\1529948991.py", line 9, in __init__
+    tiempo = numero_valido(duracion, "Duración de reserva", ReservaInvalidaError)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_25472\2854059921.py", line 37, in numero_valido
+    raise tipo_error(f"{campo} debe ser numérico.") from error_original
+ReservaInvalidaError: Duración de reserva debe ser numérico.
+2026-11-14 15:16:10,696 | INFO | Prueba 15 finalizada; aprobada=True
+2026-11-14 15:16:10,696 | WARNING | ServicioInvalidoError: Días de alquiler debe ser entero.
+2026-11-14 15:16:10,696 | WARNING | Parámetros incompatibles con la reserva
+2026-11-14 15:16:10,696 | ERROR | Prueba 16: excepción esperada controlada
+Traceback (most recent call last):
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_25472\1529948991.py", line 11, in __init__
+    tiempo = servicio.validar_parametros(tiempo)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_25472\1650672438.py", line 14, in validar_parametros
+    return entero_positivo(duracion, "Días de alquiler", ServicioInvalidoError)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_25472\2854059921.py", line 48, in entero_positivo
+    rechazar(tipo_error, f"{campo} debe ser entero.")
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_25472\2854059921.py", line 21, in rechazar
+    raise tipo_error(mensaje)
+ServicioInvalidoError: Días de alquiler debe ser entero.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_25472\3852702461.py", line 9, in ejecutar_prueba
+    operacion()
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_25472\3852702461.py", line 142, in <lambda>
+    ("Alquiler con fracción de día", lambda: Reserva("R-FRAC", clientes_prueba[0], servicios_prueba[1], 1.5), ReservaInvalidaError),
+                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_25472\1529948991.py", line 15, in __init__
+    raise ReservaInvalidaError("La duración no cumple las reglas del servicio.") from error_original
+ReservaInvalidaError: La duración no cumple las reglas del servicio.
+2026-11-14 15:16:10,696 | INFO | Prueba 16 finalizada; aprobada=True
+2026-11-14 15:16:10,696 | WARNING | ServicioInvalidoError: Horas de asesoría debe ser mayor o igual que 1.
+2026-11-14 15:16:10,696 | WARNING | Parámetros incompatibles con la reserva
+2026-11-14 15:16:10,696 | ERROR | Prueba 17: excepción esperada controlada
+Traceback (most recent call last):
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_25472\1529948991.py", line 11, in __init__
+    tiempo = servicio.validar_parametros(tiempo)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_25472\2037930848.py", line 13, in validar_parametros
+    return numero_valido(duracion, "Horas de asesoría", ServicioInvalidoError,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_25472\2854059921.py", line 42, in numero_valido
+    rechazar(tipo_error, f"{campo} debe ser {relacion} {minimo}.")
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_25472\2854059921.py", line 21, in rechazar
+    raise tipo_error(mensaje)
+ServicioInvalidoError: Horas de asesoría debe ser mayor o igual que 1.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_25472\3852702461.py", line 9, in ejecutar_prueba
+    operacion()
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_25472\3852702461.py", line 143, in <lambda>
+    ("Asesoría menor de una hora", lambda: Reserva("R-CORTA", clientes_prueba[0], servicios_prueba[2], 0.5), ReservaInvalidaError),
+                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_25472\1529948991.py", line 15, in __init__
+    raise ReservaInvalidaError("La duración no cumple las reglas del servicio.") from error_original
+ReservaInvalidaError: La duración no cumple las reglas del servicio.
+2026-11-14 15:16:10,697 | INFO | Prueba 17 finalizada; aprobada=True
+2026-11-14 15:16:10,697 | INFO | Prueba 18 finalizada; aprobada=True
+2026-11-14 15:16:10,697 | INFO | Prueba 19 finalizada; aprobada=True
+2026-11-14 15:16:10,697 | WARNING | ServicioInvalidoError: Los porcentajes no pueden superar 100.
+2026-11-14 15:16:10,697 | ERROR | Prueba 20: excepción esperada controlada
+Traceback (most recent call last):
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_25472\3852702461.py", line 9, in ejecutar_prueba
+    operacion()
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_25472\3852702461.py", line 146, in <lambda>
+    ("Porcentaje fuera de rango", lambda: servicios_prueba[0].calcular_costo(101), ServicioInvalidoError),
+                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_25472\622223553.py", line 17, in calcular_costo
+    return self.ajustar_costo(self.precio * horas, descuento, impuesto)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_25472\3940910715.py", line 32, in ajustar_costo
+    rechazar(ServicioInvalidoError, "Los porcentajes no pueden superar 100.")
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_25472\2854059921.py", line 21, in rechazar
+    raise tipo_error(mensaje)
+ServicioInvalidoError: Los porcentajes no pueden superar 100.
+2026-11-14 15:16:10,697 | INFO | Prueba 20 finalizada; aprobada=True
+2026-11-14 15:16:10,697 | WARNING | ServicioInvalidoError: Precio debe ser finito.
+2026-11-14 15:16:10,697 | ERROR | Prueba 21: excepción esperada controlada
+Traceback (most recent call last):
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_25472\3852702461.py", line 9, in ejecutar_prueba
+    operacion()
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_25472\3852702461.py", line 147, in <lambda>
+    ("Precio infinito", lambda: ReservaSala("S-INF", float("inf"), 2), ServicioInvalidoError),
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_25472\622223553.py", line 3, in __init__
+    super().__init__(identificacion, precio, disponible)
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_25472\3940910715.py", line 5, in __init__
+    self.__precio = numero_valido(precio, "Precio", ServicioInvalidoError)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_25472\2854059921.py", line 39, in numero_valido
+    rechazar(tipo_error, f"{campo} debe ser finito.")
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_25472\2854059921.py", line 21, in rechazar
+    raise tipo_error(mensaje)
+ServicioInvalidoError: Precio debe ser finito.
+2026-11-14 15:16:10,697 | INFO | Prueba 21 finalizada; aprobada=True
+2026-11-14 15:16:10,697 | WARNING | ReservaInvalidaError: Duración de reserva debe ser finito.
+2026-11-14 15:16:10,697 | ERROR | Prueba 22: excepción esperada controlada
+Traceback (most recent call last):
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_25472\3852702461.py", line 9, in ejecutar_prueba
+    operacion()
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_25472\3852702461.py", line 148, in <lambda>
+    ("Duración NaN", lambda: Reserva("R-NAN", clientes_prueba[0], servicios_prueba[0], float("nan")), ReservaInvalidaError),
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_25472\1529948991.py", line 9, in __init__
+    tiempo = numero_valido(duracion, "Duración de reserva", ReservaInvalidaError)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_25472\2854059921.py", line 39, in numero_valido
+    rechazar(tipo_error, f"{campo} debe ser finito.")
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_25472\2854059921.py", line 21, in rechazar
+    raise tipo_error(mensaje)
+ReservaInvalidaError: Duración de reserva debe ser finito.
+2026-11-14 15:16:10,697 | INFO | Prueba 22 finalizada; aprobada=True
+2026-11-14 15:16:10,697 | WARNING | Conversión inválida en Duración de reserva
+2026-11-14 15:16:10,697 | ERROR | Prueba 23: excepción esperada controlada
+Traceback (most recent call last):
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_25472\2854059921.py", line 32, in numero_valido
+    raise ValueError("Tipo numérico no admitido")
+ValueError: Tipo numérico no admitido
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_25472\3852702461.py", line 9, in ejecutar_prueba
+    operacion()
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_25472\3852702461.py", line 149, in <lambda>
+    ("Booleano como duración", lambda: Reserva("R-BOOL", clientes_prueba[0], servicios_prueba[0], True), ReservaInvalidaError),
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_25472\1529948991.py", line 9, in __init__
+    tiempo = numero_valido(duracion, "Duración de reserva", ReservaInvalidaError)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_25472\2854059921.py", line 37, in numero_valido
+    raise tipo_error(f"{campo} debe ser numérico.") from error_original
+ReservaInvalidaError: Duración de reserva debe ser numérico.
+2026-11-14 15:16:10,697 | INFO | Prueba 23 finalizada; aprobada=True
+2026-11-14 15:16:10,697 | WARNING | ReservaInvalidaError: La reserva requiere un objeto Cliente.
+2026-11-14 15:16:10,697 | ERROR | Prueba 24: excepción esperada controlada
+Traceback (most recent call last):
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_25472\3852702461.py", line 9, in ejecutar_prueba
+    operacion()
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_25472\3852702461.py", line 150, in <lambda>
+    ("Cliente de tipo incorrecto", lambda: Reserva("R-CLI", "Laura", servicios_prueba[0], 1), ReservaInvalidaError),
+                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_25472\1529948991.py", line 6, in __init__
+    rechazar(ReservaInvalidaError, "La reserva requiere un objeto Cliente.")
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_25472\2854059921.py", line 21, in rechazar
+    raise tipo_error(mensaje)
+ReservaInvalidaError: La reserva requiere un objeto Cliente.
+2026-11-14 15:16:10,697 | INFO | Prueba 24 finalizada; aprobada=True
+2026-11-14 15:16:10,699 | WARNING | ReservaInvalidaError: La reserva requiere un objeto Servicio.
+2026-11-14 15:16:10,699 | ERROR | Prueba 25: excepción esperada controlada
+Traceback (most recent call last):
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_25472\3852702461.py", line 9, in ejecutar_prueba
+    operacion()
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_25472\3852702461.py", line 151, in <lambda>
+    ("Servicio de tipo incorrecto", lambda: Reserva("R-SRV", clientes_prueba[0], "sala", 1), ReservaInvalidaError),
+                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_25472\1529948991.py", line 8, in __init__
+    rechazar(ReservaInvalidaError, "La reserva requiere un objeto Servicio.")
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_25472\2854059921.py", line 21, in rechazar
+    raise tipo_error(mensaje)
+ReservaInvalidaError: La reserva requiere un objeto Servicio.
+2026-11-14 15:16:10,699 | INFO | Prueba 25 finalizada; aprobada=True
+2026-11-14 15:16:10,699 | INFO | Servicio creado: sala S-DISP
+2026-11-14 15:16:10,699 | INFO | Reserva realizada: R-DISP; servicio S-DISP
+2026-11-14 15:16:10,699 | INFO | Reserva procesada: R-DISP
+2026-11-14 15:16:10,699 | WARNING | ServicioNoDisponibleError: Servicio S-DISP no disponible.
+2026-11-14 15:16:10,699 | ERROR | Prueba 26: excepción esperada controlada
+Traceback (most recent call last):
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_25472\3852702461.py", line 9, in ejecutar_prueba
+    operacion()
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_25472\3852702461.py", line 99, in disponibilidad_al_confirmar
+    reserva.confirmar()
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_25472\1529948991.py", line 52, in confirmar
+    self.servicio.comprobar_disponibilidad()
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_25472\3940910715.py", line 24, in comprobar_disponibilidad
+    rechazar(ServicioNoDisponibleError, f"Servicio {self.identificacion} no disponible.")
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_25472\2854059921.py", line 21, in rechazar
+    raise tipo_error(mensaje)
+ServicioNoDisponibleError: Servicio S-DISP no disponible.
+2026-11-14 15:16:10,699 | INFO | Prueba 26 finalizada; aprobada=True
+2026-11-14 15:16:10,699 | ERROR | Prueba 27: excepción esperada controlada
+Traceback (most recent call last):
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_25472\3852702461.py", line 9, in ejecutar_prueba
+    operacion()
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_25472\3852702461.py", line 104, in estado_solo_lectura
+    reservas_prueba[0].estado = "confirmada"
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: property 'estado' of 'Reserva' object has no setter
+2026-11-14 15:16:10,699 | INFO | Prueba 27 finalizada; aprobada=True
+2026-11-14 15:16:10,699 | INFO | Prueba 28 finalizada; aprobada=True
+2026-11-14 15:16:10,699 | WARNING | ClienteInvalidoError: El teléfono debe tener de 7 a 15 dígitos, con + opcional.
+2026-11-14 15:16:10,699 | ERROR | Prueba 29: excepción esperada controlada
+Traceback (most recent call last):
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_25472\3852702461.py", line 9, in ejecutar_prueba
+    operacion()
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_25472\3852702461.py", line 155, in <lambda>
+    ("Teléfono inválido", lambda: Cliente("3", "Luis", "luis@example.com", "abc"), ClienteInvalidoError),
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_25472\4284315449.py", line 7, in __init__
+    self.telefono = telefono
+    ^^^^^^^^^^^^^
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_25472\4284315449.py", line 37, in telefono
+    rechazar(ClienteInvalidoError, "El teléfono debe tener de 7 a 15 dígitos, con + opcional.")
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_25472\2854059921.py", line 21, in rechazar
+    raise tipo_error(mensaje)
+ClienteInvalidoError: El teléfono debe tener de 7 a 15 dígitos, con + opcional.
+2026-11-14 15:16:10,699 | INFO | Prueba 29 finalizada; aprobada=True
+2026-11-14 15:16:10,699 | WARNING | ClienteInvalidoError: Identificación debe ser un texto no vacío.
+2026-11-14 15:16:10,699 | ERROR | Prueba 30: excepción esperada controlada
+Traceback (most recent call last):
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_25472\3852702461.py", line 9, in ejecutar_prueba
+    operacion()
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_25472\3852702461.py", line 156, in <lambda>
+    ("Identificación vacía", lambda: Cliente("", "Luis", "luis@example.com", "3001234567"), ClienteInvalidoError),
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_25472\4284315449.py", line 4, in __init__
+    super().__init__(texto_valido(identificacion, "Identificación", ClienteInvalidoError))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_25472\2854059921.py", line 25, in texto_valido
+    rechazar(tipo_error, f"{campo} debe ser un texto no vacío.")
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_25472\2854059921.py", line 21, in rechazar
+    raise tipo_error(mensaje)
+ClienteInvalidoError: Identificación debe ser un texto no vacío.
+2026-11-14 15:16:10,699 | INFO | Prueba 30 finalizada; aprobada=True
+2026-11-14 15:16:10,699 | WARNING | ServicioInvalidoError: Capacidad debe ser entero.
+2026-11-14 15:16:10,699 | ERROR | Prueba 31: excepción esperada controlada
+Traceback (most recent call last):
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_25472\3852702461.py", line 9, in ejecutar_prueba
+    operacion()
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_25472\3852702461.py", line 157, in <lambda>
+    ("Capacidad no entera", lambda: ReservaSala("S-CAP", 50000, 2.5), ServicioInvalidoError),
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_25472\622223553.py", line 4, in __init__
+    self.__capacidad = entero_positivo(capacidad, "Capacidad", ServicioInvalidoError)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_25472\2854059921.py", line 48, in entero_positivo
+    rechazar(tipo_error, f"{campo} debe ser entero.")
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_25472\2854059921.py", line 21, in rechazar
+    raise tipo_error(mensaje)
+ServicioInvalidoError: Capacidad debe ser entero.
+2026-11-14 15:16:10,699 | INFO | Prueba 31 finalizada; aprobada=True
+2026-11-14 15:16:10,699 | WARNING | ServicioInvalidoError: Cantidad de equipos debe ser mayor que 0.
+2026-11-14 15:16:10,699 | ERROR | Prueba 32: excepción esperada controlada
+Traceback (most recent call last):
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_25472\3852702461.py", line 9, in ejecutar_prueba
+    operacion()
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_25472\3852702461.py", line 158, in <lambda>
+    ("Cantidad de equipos cero", lambda: AlquilerEquipo("E-CERO", 30000, 0), ServicioInvalidoError),
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_25472\1650672438.py", line 4, in __init__
+    self.__cantidad = entero_positivo(cantidad, "Cantidad de equipos", ServicioInvalidoError)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_25472\2854059921.py", line 46, in entero_positivo
+    numero = numero_valido(valor, campo, tipo_error)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_25472\2854059921.py", line 42, in numero_valido
+    rechazar(tipo_error, f"{campo} debe ser {relacion} {minimo}.")
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_25472\2854059921.py", line 21, in rechazar
+    raise tipo_error(mensaje)
+ServicioInvalidoError: Cantidad de equipos debe ser mayor que 0.
+2026-11-14 15:16:10,699 | INFO | Prueba 32 finalizada; aprobada=True
+2026-11-14 15:16:10,700 | WARNING | ServicioInvalidoError: Especialidad debe ser un texto no vacío.
+2026-11-14 15:16:10,700 | ERROR | Prueba 33: excepción esperada controlada
+Traceback (most recent call last):
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_25472\3852702461.py", line 9, in ejecutar_prueba
+    operacion()
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_25472\3852702461.py", line 159, in <lambda>
+    ("Especialidad vacía", lambda: AsesoriaEspecializada("A-VAC", 80000, ""), ServicioInvalidoError),
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_25472\2037930848.py", line 4, in __init__
+    self.__especialidad = texto_valido(especialidad, "Especialidad", ServicioInvalidoError)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_25472\2854059921.py", line 25, in texto_valido
+    rechazar(tipo_error, f"{campo} debe ser un texto no vacío.")
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_25472\2854059921.py", line 21, in rechazar
+    raise tipo_error(mensaje)
+ServicioInvalidoError: Especialidad debe ser un texto no vacío.
+2026-11-14 15:16:10,700 | INFO | Prueba 33 finalizada; aprobada=True
+2026-11-14 15:16:10,700 | ERROR | Prueba 34: excepción esperada controlada
+Traceback (most recent call last):
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_25472\3852702461.py", line 9, in ejecutar_prueba
+    operacion()
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_25472\3852702461.py", line 160, in <lambda>
+    ("Entidad abstracta", lambda: Entidad("X"), TypeError),
+                                  ^^^^^^^^^^^^
+TypeError: Can't instantiate abstract class Entidad without an implementation for abstract method 'describir'
+2026-11-14 15:16:10,700 | INFO | Prueba 34 finalizada; aprobada=True
+2026-11-14 15:16:10,700 | ERROR | Prueba 35: excepción esperada controlada
+Traceback (most recent call last):
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_25472\3852702461.py", line 9, in ejecutar_prueba
+    operacion()
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_25472\3852702461.py", line 161, in <lambda>
+    ("Servicio abstracto", lambda: Servicio("X", 1000), TypeError),
+                                   ^^^^^^^^^^^^^^^^^^^
+TypeError: Can't instantiate abstract class Servicio without an implementation for abstract methods 'calcular_costo', 'describir_servicio', 'validar_parametros'
+2026-11-14 15:16:10,700 | INFO | Prueba 35 finalizada; aprobada=True
+2026-11-14 15:16:10,700 | INFO | Reserva realizada: R-PEND; servicio S-T
+2026-11-14 15:16:10,700 | WARNING | OperacionNoPermitidaError: No se puede confirmar una reserva en estado pendiente.
+2026-11-14 15:16:10,700 | ERROR | Prueba 36: excepción esperada controlada
+Traceback (most recent call last):
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_25472\3852702461.py", line 9, in ejecutar_prueba
+    operacion()
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_25472\3852702461.py", line 162, in <lambda>
+    ("Confirmar antes de procesar", lambda: Reserva("R-PEND", clientes_prueba[0], servicios_prueba[0], 1).confirmar(), OperacionNoPermitidaError),
+                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_25472\1529948991.py", line 51, in confirmar
+    self.__exigir_estado(("procesada",), "confirmar")
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_25472\1529948991.py", line 41, in __exigir_estado
+    rechazar(OperacionNoPermitidaError,
+  File "C:\Users\avalo\AppData\Local\Temp\ipykernel_25472\2854059921.py", line 21, in rechazar
+    raise tipo_error(mensaje)
+OperacionNoPermitidaError: No se puede confirmar una reserva en estado pendiente.
+2026-11-14 15:16:10,700 | INFO | Prueba 36 finalizada; aprobada=True
+2026-11-14 15:16:10,700 | INFO | Reserva realizada: R-CONTINUA; servicio A-T
+2026-11-14 15:16:10,700 | INFO | Reserva procesada: R-CONTINUA
+2026-11-14 15:16:10,700 | INFO | Reserva confirmada: R-CONTINUA
+2026-11-14 15:16:10,700 | INFO | Prueba 37 finalizada; aprobada=True
+2026-11-14 15:16:10,706 | INFO | Pruebas finalizadas: 37/37 correctas
