@@ -4,7 +4,23 @@
 
 ### Descripción
 
-Software FJ es una empresa ficticia que ofrece reserva de salas, alquiler de equipos y asesorías especializadas. Este proyecto gestiona clientes, servicios y reservas con objetos y listas en memoria. Los datos se reinician al ejecutar todo el notebook; únicamente los eventos y errores se guardan en `sistema.log`.
+Software FJ es una empresa ficticia que ofrece reserva de salas, alquiler de equipos y asesorías especializadas. Este proyecto gestiona clientes, servicios y reservas con objetos y listas en memoria. Los datos se reinician al ejecutar el programa completo; únicamente los eventos y errores se guardan en `sistema.log`.
+
+### Archivos fuente
+
+- `Fase4_SoftwareFJ.ipynb`: notebook ejecutado y documentado.
+- `Fase4_SoftwareFJ.py`: archivo fuente Python comentado solicitado para la entrega final.
+
+Las dos versiones contienen el mismo desarrollo funcional, las demostraciones y las 37 pruebas. El archivo `.py` conserva las instrucciones del notebook en el mismo orden y transforma las explicaciones en comentarios por secciones; no cambia la lógica del sistema.
+
+```text
+Fase4-Programacion-UNAD/
+├── Fase4_SoftwareFJ.ipynb
+├── Fase4_SoftwareFJ.py
+├── README.md
+├── .gitignore
+└── sistema.log
+```
 
 ### Objetivo
 
@@ -37,6 +53,16 @@ Los precios están expresados en pesos colombianos (COP). El descuento se aplica
 
 ### Ejecución
 
+**Archivo fuente Python:** desde la carpeta del proyecto ejecutar:
+
+```powershell
+python Fase4_SoftwareFJ.py
+```
+
+Solo requiere Python 3 y su biblioteca estándar. Ejecuta las demostraciones, las 37 pruebas y la validación final del log.
+
+**Notebook:**
+
 1. Abrir esta carpeta en VS Code con las extensiones Python y Jupyter, o en Jupyter Notebook/JupyterLab.
 2. Seleccionar un kernel Python 3. Si no está disponible: `python -m pip install ipykernel`.
 3. Abrir `Fase4_SoftwareFJ.ipynb` y elegir **Reiniciar kernel y ejecutar todas las celdas**.
@@ -49,7 +75,7 @@ python -m pip install nbformat nbclient ipykernel
 python -c "import nbformat; from nbclient import NotebookClient; p='Fase4_SoftwareFJ.ipynb'; n=nbformat.read(p, as_version=4); NotebookClient(n, timeout=120, kernel_name='python3', resources={'metadata': {'path': '.'}}).execute(); nbformat.write(n,p)"
 ```
 
-Estas herramientas son necesarias para ejecutar notebooks; el sistema Software FJ no importa dependencias externas. El log se crea en el directorio de trabajo del kernel (normalmente esta carpeta). Su ruta absoluta se imprime al iniciar. Cada ejecución agrega eventos; no borra evidencias anteriores. No se registran correos ni teléfonos.
+Estas herramientas son necesarias para ejecutar notebooks; el sistema Software FJ no importa dependencias externas. En ambas versiones, el log se crea en el directorio de trabajo (normalmente esta carpeta). Su ruta absoluta se imprime al iniciar. Cada ejecución agrega eventos; no borra evidencias anteriores. No se registran correos ni teléfonos.
 
 ### Pruebas
 
@@ -71,6 +97,8 @@ Noviembre de 2026
 ### Validación realizada y lista de comprobación
 
 Notebook validado con `nbformat` y ejecutado íntegramente con `nbclient` en dos kernels nuevos: **37/37 operaciones correctas en ambas ejecuciones**, sin salidas de error inesperado. Se conservan los resultados en las celdas. La última prueba crea y confirma una reserva después de las pruebas negativas. El log evidencia ambas ejecuciones y las trazas de las excepciones esperadas.
+
+El archivo `Fase4_SoftwareFJ.py` también se ejecutó completamente: **37/37 pruebas correctas y 0 fallidas**, con errores intencionales controlados y validación de los niveles INFO/WARNING/ERROR en `sistema.log`. Se comprobó que su árbol de instrucciones Python (AST) coincide con las celdas de código del notebook y que el archivo `.ipynb` permanece sin modificaciones.
 
 - [x] Clase abstracta general: `Entidad`, sección 4; prueba 34.
 - [x] Cliente: sección 5; pruebas 1, 2, 14, 28, 29 y 30.
